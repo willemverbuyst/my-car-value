@@ -16,6 +16,9 @@ Content-Type: application/json
   "password": "test123"
 }
 
+### Sign out user
+POST http://localhost:3000/auth/signout
+
 ### Get currently signed in user
 GET http://localhost:3000/auth/whoami
 
