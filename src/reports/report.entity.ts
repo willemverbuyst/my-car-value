@@ -4,7 +4,10 @@ import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 @Entity()
 export class Report {
   @PrimaryGeneratedColumn()
-  id: string;
+  id: number;
+
+  @Column({ default: false })
+  approved: boolean;
 
   @Column()
   price: number;
