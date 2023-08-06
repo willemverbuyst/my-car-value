@@ -25,3 +25,8 @@ GET http://localhost:4000/reports/estimate?make=ford&model=mustang&lng=45&lat=45
 
 ### Get all reports
 GET http://localhost:4000/reports
+
+
+### Get one report
+GET http://localhost:4000/reports/1
+Content-Type: application/json

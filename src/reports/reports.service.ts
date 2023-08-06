@@ -17,6 +17,14 @@ export class ReportsService {
     return this.repo.save(report);
   }
 
+  async findOne(id: number) {
+    if (!id) {
+      return null;
+    }
+
+    return this.repo.findOneBy({ id });
+  }
+
   async getReports() {
     const reports = await this.repo.find();
 

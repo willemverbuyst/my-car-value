@@ -2,6 +2,7 @@ import {
   Body,
   Controller,
   Get,
+  NotFoundException,
   Param,
   Patch,
   Post,
@@ -44,5 +45,15 @@ export class ReportsController {
   @Get('/')
   async getReports() {
     return this.reportsService.getReports();
+  }
+
+  @Get('/:id')
+  async findReport(@Param('id') id: string) {
+    const user = await this.reportsService.findOne(parseInt(id));
+    if (!user) {
+      throw new NotFoundException('report not found');
+    }
+
+    return user;
   }
 }
