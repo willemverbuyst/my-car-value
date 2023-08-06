@@ -1,5 +1,5 @@
 ### Signup new user
-POST http://localhost:3000/auth/signup
+POST http://localhost:4000/auth/signup
 Content-Type: application/json
 
 {
@@ -8,7 +8,7 @@ Content-Type: application/json
 }
 
 ### Signin user
-POST http://localhost:3000/auth/signin
+POST http://localhost:4000/auth/signin
 Content-Type: application/json
 
 {
@@ -17,22 +17,22 @@ Content-Type: application/json
 }
 
 ### Sign out user
-POST http://localhost:3000/auth/signout
+POST http://localhost:4000/auth/signout
 
 ### Get currently signed in user
-GET http://localhost:3000/auth/whoami
+GET http://localhost:4000/auth/whoami
 
 ### Get user by id
-GET http://localhost:3000/auth/1
+GET http://localhost:4000/auth/1
 
 ### Find all users with a given email
-GET http://localhost:3000/auth?email=test@test.io
+GET http://localhost:4000/auth?email=test@test.io
 
 ### Delete user by id
-DELETE http://localhost:3000/auth/5
+DELETE http://localhost:4000/auth/5
 
 ### Update a user by id
-PATCH http://localhost:3000/auth/4
+PATCH http://localhost:4000/auth/4
 Content-Type: application/json
 
 {
