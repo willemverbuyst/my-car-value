@@ -36,8 +36,13 @@ export class ReportsController {
     return this.reportsService.changeApproval(id, body.approved);
   }
 
-  @Get()
+  @Get('/estimate')
   async getEstimate(@Query() query: GetEstimateDto) {
     return this.reportsService.createEstimate(query);
+  }
+
+  @Get('/')
+  async getReports() {
+    return this.reportsService.getReports();
   }
 }
