@@ -9,9 +9,11 @@ export class TypeOrmConfigService implements TypeOrmOptionsFactory {
   createTypeOrmOptions(): TypeOrmModuleOptions | Promise<TypeOrmModuleOptions> {
     return {
       type: 'sqlite',
-      synchronize: false,
+      synchronize: process.env.NODE_ENV === 'test' ? true : false,
       database: this.configService.get('DB_NAME'),
       autoLoadEntities: true,
+      migrationsRun: process.env.NODE_ENV === 'test' ? true : false,
+      keepConnectionAlive: process.env.NODE_ENV === 'test' ? true : false,
     };
   }
 }
