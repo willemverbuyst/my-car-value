@@ -22,7 +22,11 @@ export class UsersService {
   }
 
   find(email: string) {
-    return this.repo.find({ where: { email } });
+    if (email) {
+      return this.repo.find({ where: { email } });
+    }
+
+    return this.repo.find();
   }
 
   async update(id: number, attrs: Partial<User>) {

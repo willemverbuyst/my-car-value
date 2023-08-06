@@ -3,7 +3,7 @@ POST http://localhost:4000/auth/signup
 Content-Type: application/json
 
 {
-  "email": "c@c.io",
+  "email": "d@d.io",
   "password": "test123"
 }
 
@@ -26,7 +26,10 @@ GET http://localhost:4000/auth/whoami
 GET http://localhost:4000/auth/1
 
 ### Find all users with a given email
-GET http://localhost:4000/auth?email=test@test.io
+GET http://localhost:4000/auth?email=d@d.io
+
+### Find all users
+GET http://localhost:4000/auth
 
 ### Delete user by id
 DELETE http://localhost:4000/auth/5
@@ -36,6 +39,6 @@ PATCH http://localhost:4000/auth/4
 Content-Type: application/json
 
 {
-  "email": "test@test.io",
+  "email": "c@c.io",
   "password": "test123"
 }
