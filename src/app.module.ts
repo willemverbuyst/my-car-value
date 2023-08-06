@@ -4,10 +4,9 @@ import { APP_PIPE } from '@nestjs/core';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { TypeOrmConfigService } from './config/typeorm.config';
 import { ReportsModule } from './reports/reports.module';
 import { UsersModule } from './users/users.module';
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const dbConfig = require('../ormconfig.js');
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const cookieSession = require('cookie-session');
 
@@ -19,7 +18,7 @@ const cookieSession = require('cookie-session');
       isGlobal: true,
       envFilePath: `.env.${process.env.NODE_ENV}`,
     }),
-    TypeOrmModule.forRoot(dbConfig),
+    TypeOrmModule.forRootAsync({ useClass: TypeOrmConfigService }),
   ],
   controllers: [AppController],
   providers: [
