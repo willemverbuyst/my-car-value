@@ -36,6 +36,8 @@ export class ReportsController {
 
   @ApiOkResponse({
     description: 'All reports returned successfully',
+    type: Report,
+    isArray: true,
   })
   @Get('/')
   async getReports() {

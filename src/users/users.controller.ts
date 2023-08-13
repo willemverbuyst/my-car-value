@@ -89,6 +89,7 @@ export class UsersController {
 
   @ApiOkResponse({
     description: 'The user is returned successfully',
+    type: User,
   })
   @ApiNotFoundResponse({ description: 'User not found' })
   @Get('/:id')
@@ -103,6 +104,8 @@ export class UsersController {
 
   @ApiOkResponse({
     description: 'Users with the provided email are returned successfully',
+    type: User,
+    isArray: true,
   })
   @Get()
   findAllUsers(@Query('email') email: string) {

@@ -1,3 +1,4 @@
+import { ApiProperty } from '@nestjs/swagger';
 import {
   AfterInsert,
   AfterRemove,
@@ -11,15 +12,19 @@ import { Report } from '../reports/report.entity';
 
 @Entity()
 export class User {
+  @ApiProperty({ example: 1 })
   @PrimaryGeneratedColumn()
   id: number;
 
+  @ApiProperty({ example: 'test@test.io' })
   @Column()
   email: string;
 
+  @ApiProperty({ example: 'testPassword123' })
   @Column()
   password: string;
 
+  @ApiProperty({ example: false })
   @Column({ default: false })
   admin: boolean;
 
